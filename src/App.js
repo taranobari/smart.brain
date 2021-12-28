@@ -1,25 +1,48 @@
 import logo from './logo.svg';
 import './App.css';
+import Navigation from './copmonents/Navigation/Navigation';
+import Logo from './copmonents/Logo/Logo';
+import ImageLinkForm from './copmonents/ImageLinkForm/ImageLinkForm'
+import Rank from './copmonents/Rank/Rank'
+// import Particles from 'react-particles-js'; 
+import { Component } from 'react';
 
-function App() {
+// const particle={
+//  Particles:{
+//    number:{
+//      value:30,
+//      density:{
+//      enable:true,
+//      value_area:800
+//      }
+//     }
+//   }
+
+// }
+
+class App extends Component {
+  constructor(){
+    super()
+    this.state={
+      input:'',
+    }
+    onInputChane=(event)=>{
+      console.log(event.target.value)
+    }
+  }
+render(){
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Particles className='particles'  params={particle}/> */}
+     <Navigation/>
+     <Logo/>
+     {/* <Rank/> */}
+     <ImageLinkForm onInputChane={onInputChane}/>
+     {/* <FaceReccognation/> */}
     </div>
   );
+}
 }
 
 export default App;
